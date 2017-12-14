@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>melody</title>
+  
+  <subtitle>keep moving</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://melodyyyyy.com/"/>
+  <updated>2017-12-13T09:49:42.373Z</updated>
+  <id>http://melodyyyyy.com/</id>
+  
+  <author>
+    <name>melody</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>搭建博客</title>
+    <link href="http://melodyyyyy.com/2017/12/13/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/"/>
+    <id>http://melodyyyyy.com/2017/12/13/搭建博客/</id>
+    <published>2017-12-13T09:47:18.000Z</published>
+    <updated>2017-12-13T09:49:42.373Z</updated>
+    
+    <content type="html"><![CDATA[<p>你好，欢迎来到我的技术博客</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;你好，欢迎来到我的技术博客&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+</feed>
