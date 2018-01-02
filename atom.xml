@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://melodyyyyy.com/"/>
-  <updated>2018-01-02T05:49:38.932Z</updated>
+  <updated>2018-01-02T05:55:30.255Z</updated>
   <id>http://melodyyyyy.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://melodyyyyy.com/2018/01/02/hotreload/"/>
     <id>http://melodyyyyy.com/2018/01/02/hotreload/</id>
     <published>2018-01-02T05:38:06.000Z</published>
-    <updated>2018-01-02T05:49:38.932Z</updated>
+    <updated>2018-01-02T05:55:30.255Z</updated>
     
     <content type="html"><![CDATA[<h3 id="热加载失效"><a href="#热加载失效" class="headerlink" title="热加载失效"></a>热加载失效</h3><p>用vue-cli+webpack+element+axios+vue-router搭建了一个后台管理系统，用得很顺手，元旦过后启动项目发现热加载突然失效了。修改代码后保存，页面不发生改变，手动刷新也不起作用，只能重新启动项目才能看到修改后的效果。</p><h3 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf</span><br><span class="line">sudo sysctl -p</span><br></pre></td></tr></table></figure><p>OK，问题解决了！</p>]]></content>
     
@@ -34,6 +34,8 @@
     
     </summary>
     
+    
+      <category term="vue-cli" scheme="http://melodyyyyy.com/tags/vue-cli/"/>
     
   </entry>
   

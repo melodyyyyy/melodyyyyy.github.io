@@ -9,13 +9,14 @@
   <title>Linux下vue-cli热加载失效 | melody</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="热加载失效用vue-cli+webpack+element+axios+vue-router搭建了一个后台管理系统，用得很顺手，元旦过后启动项目发现热加载突然失效了。修改代码后保存，页面不发生改变，手动刷新也不起作用，只能重新启动项目才能看到修改后的效果。 解决方法12echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl">
+<meta name="keywords" content="vue-cli">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux下vue-cli热加载失效">
 <meta property="og:url" content="http://melodyyyyy.com/2018/01/02/hotreload/index.html">
 <meta property="og:site_name" content="melody">
 <meta property="og:description" content="热加载失效用vue-cli+webpack+element+axios+vue-router搭建了一个后台管理系统，用得很顺手，元旦过后启动项目发现热加载突然失效了。修改代码后保存，页面不发生改变，手动刷新也不起作用，只能重新启动项目才能看到修改后的效果。 解决方法12echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-01-02T05:49:38.932Z">
+<meta property="og:updated_time" content="2018-01-02T05:55:30.255Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux下vue-cli热加载失效">
 <meta name="twitter:description" content="热加载失效用vue-cli+webpack+element+axios+vue-router搭建了一个后台管理系统，用得很顺手，元旦过后启动项目发现热加载突然失效了。修改代码后保存，页面不发生改变，手动刷新也不起作用，只能重新启动项目才能看到修改后的效果。 解决方法12echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl">
@@ -202,6 +203,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">vue-cli</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -387,6 +399,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">vue-cli</a>
+              </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">webpack</a>
