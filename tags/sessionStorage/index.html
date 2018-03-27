@@ -6,12 +6,12 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://melodyyyyy.com">
-  <title>melody</title>
+  <title>Tag: sessionStorage | melody</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="melody&apos;s blog">
 <meta property="og:type" content="website">
 <meta property="og:title" content="melody">
-<meta property="og:url" content="http://melodyyyyy.com/index.html">
+<meta property="og:url" content="http://melodyyyyy.com/tags/sessionStorage/index.html">
 <meta property="og:site_name" content="melody">
 <meta property="og:description" content="melody&apos;s blog">
 <meta property="og:locale" content="zh-CN">
@@ -151,37 +151,34 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-sessionStorage" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
+  
     
-      <header class="article-header">
-        
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2018" class="archive-year">2018</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2018/03/17/sessionStorage/" class="archive-article-date">
+  	<time datetime="2018-03-17T05:57:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-17</time>
+</a>
+        </div>
+    	 
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/03/17/sessionStorage/">webStorage</a>
+      <a class="archive-article-title" href="/2018/03/17/sessionStorage/">webStorage</a>
     </h1>
   
 
-        
-        <a href="/2018/03/17/sessionStorage/" class="archive-article-date">
-  	<time datetime="2018-03-17T05:57:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-17</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="cookie的缺点"><a href="#cookie的缺点" class="headerlink" title="cookie的缺点"></a>cookie的缺点</h3><p>webStorage的概念和cookie相似，但cookie的数量和长度有限制，每个domain最多只能有20条cookie，每个cookie长度不能超过4kb；而且cookie存在安全性问题，如果cookie被人拦截了，对方可以取得所有的session信息，即便加密也于事无补，因为拦截者不需要知道cookie的意义，他只需要把cookie转发就能达到目的；cookie的API不够灵活，需要自己封装setCookie、getCookie等方法；另外cookie数据始终在同源的http请求中携带（即使不需要），即cookie在浏览器和服务器间来回传递，每次请求一个新页面的时候cookie都会被发送过去，无形中浪费了带宽。<br>但是cookie也是不可以或缺的：cookie的作用是与服务器进行交互，作为HTTP规范的一部分而存在 ，而webStorage仅仅是为了在本地“存储”数据而生，webStorage的意图在于解决本地本来不应该用cookie做，却不得不用cookie的本地存储。</p>
-<h3 id="webStorage"><a href="#webStorage" class="headerlink" title="webStorage"></a>webStorage</h3><p>html5中的Web Storage包括了两种存储方式：sessionStorage和localStorage。<br>sessionStorage用于本地存储一个会话（session）中的数据，这些数据只有在同一个会话中的页面才能访问并且当会话结束后数据也随之销毁。因此sessionStorage不是一种持久化的本地存储，仅仅是会话级别的存储。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sessionStorage.setItem(&apos;key&apos;, &apos;value&apos;);                      //保存数据到sessionStorage</span><br><span class="line">var data = sessionStorage.getItem(&apos;key&apos;);                    //从sessionStorage获取数据</span><br><span class="line">sessionStorage.removeItem(&apos;key&apos;);                            //从sessionStorage删除保存的数据</span><br><span class="line">sessionStorage.clear();                                      //从sessionStorage删除所有保存的数据</span><br></pre></td></tr></table></figure><br>localStorage用于持久化的本地存储，除非主动删除数据，否则数据是永远不会过期的。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">localStorage.setItem(&apos;myCat&apos;, &apos;Tom&apos;);                        //保存数据到localStorage</span><br><span class="line">var cat = localStorage.getItem(&quot;myCat&quot;);                     //从localStorage获取数据</span><br><span class="line">localStorage.removeItem(&quot;myCat&quot;);                            //从localStorage删除保存的数据</span><br><span class="line">localStorage.clear();                                        //从localStorage删除所有保存的数据</span><br></pre></td></tr></table></figure></p>
-<h3 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h3><p>localStorage可以用来统计页面访问次数。<br>sessionStorage可以用来统计当前页面元素的点击次数。<br>cookie一般存储用户名密码相关信息，一般使用escape转义编码后存储。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -197,303 +194,19 @@
 		</ul>
 	</div>
 
-      
+          
 
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/03/17/sessionStorage/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
+        </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
-    <article id="post-sass" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
+  
+    </div></section>
+  
+
     
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/01/18/sass/">在vue项目中使用sass</a>
-    </h1>
-  
-
-        
-        <a href="/2018/01/18/sass/" class="archive-article-date">
-  	<time datetime="2018-01-18T01:18:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-18</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>Sass 是一款强化 CSS 的辅助工具，它在 CSS 语法的基础上增加了变量 (variables)、嵌套 (nested rules)、混合 (mixins)、导入 (inline imports) 等高级功能，这些拓展令 CSS 更加强大与优雅。使用 Sass 以及 Sass 的样式库（如 Compass）有助于更好地组织管理样式文件，以及更高效地开发项目。</p>
-<h3 id="在vue项目中使用sass"><a href="#在vue项目中使用sass" class="headerlink" title="在vue项目中使用sass"></a>在vue项目中使用sass</h3><p>我的项目是用vue-cli脚手架搭建的。<br>1.引入依赖包<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install node-sass --save-dev</span><br><span class="line">npm install sass-loader --save-dev</span><br></pre></td></tr></table></figure><br>2.修改style标签<br>将组件里面<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;style scoped&gt;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure><br>修改为<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;style lang=&quot;scss&quot; scoped&gt;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure><br>这样的话，就可以在项目中使用sass了！</p>
-<h3 id="sass基础语法"><a href="#sass基础语法" class="headerlink" title="sass基础语法"></a>sass基础语法</h3><ul>
-<li>使用变量</li>
-</ul>
-<p>sass让人们受益的一个重要特性就是它为css引入了变量，以后可以通过变量名来引用这个属性值，不需要再重复书写，sass使用$符号来标识变量。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$mainColor:#eef1f6;</span><br><span class="line">.content&#123;</span><br><span class="line">	background-color:$mainColor;</span><br><span class="line">	border:1px solid $mainColor</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<ul>
-<li>嵌套</li>
-</ul>
-<p>sass允许嵌套，避免重复的写同一个选择器。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">.content&#123;</span><br><span class="line">	color:#fff;</span><br><span class="line">&#125;</span><br><span class="line">.content p&#123;</span><br><span class="line">	font-size:14px;</span><br><span class="line">&#125;</span><br><span class="line">.content span&#123;</span><br><span class="line">	font-weight:bold;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>这种情况可以使用嵌套写成<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">.content&#123;</span><br><span class="line">	color:#fff;</span><br><span class="line">	p&#123;font-size:14px;&#125;</span><br><span class="line">	span&#123;font-weight:bold;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br>这样的话避免重复书写同一个选择器，可读性也更强了。<br>1.父选择器的标识符&amp;；<br>大多数情况下简单的嵌套都没问题，但如果想在嵌套的选择器里面应用一个类似:hover的伪类，sass就无法工作，解决的办法是使用父选择器&amp;。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">.content a&#123;</span><br><span class="line">	font-size:14px;</span><br><span class="line">&#125;</span><br><span class="line">.content a:hover&#123;</span><br><span class="line">	font-weight:bold;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br>这种情况可以利用父选择器嵌套为<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">.content a&#123;</span><br><span class="line">	font-size:14px;</span><br><span class="line">	&amp;:hover&#123;font-weight:bold;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br>2.群组选择器的嵌套<br>如果你需要在一个特定的容器元素内对一个群组选择器进行修饰，为了避免重复书写容器元素的选择器，可以使用嵌套。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.container h1, .container h2, .container h3 &#123; margin-bottom: .8em &#125;</span><br></pre></td></tr></table></figure><br>这种情况可以用嵌套写为<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.container &#123;</span><br><span class="line">  h1, h2, h3 &#123;margin-bottom: .8em&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br>3.子组合选择器和同层组合选择器:&gt;、+和～<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">article section &#123; margin: 5px &#125;				//选择article下的所有命中section选择器的元素</span><br><span class="line">article &gt; section &#123; border: 1px solid #ccc &#125;		//选择article下紧跟着的子元素命中section选择器的元素</span><br><span class="line">header + p &#123; font-size: 1.1em &#125;				//选择header元素后紧跟的p元素</span><br><span class="line">article ～ article &#123; border-top: 1px dashed #ccc &#125;	//选择所有跟在article后的同层article元素，不管它们之间隔了多少其他元素</span><br></pre></td></tr></table></figure></p>
-<ul>
-<li>导入SASS文件</li>
-</ul>
-<p>sass的@import规则在生成css文件时就把相关文件导入进来。这意味着所有相关的样式被归纳到了同一个css文件中，而无需发起额外的下载请求。<br><img src="/assets/blogImg/import.png" alt=""></p>
-<ul>
-<li>混合器</li>
-</ul>
-<p>当你需要大段大段的重用样式的代码，独立的变量就没办法应付这种情况了。你可以通过sass的混合器实现大段样式的重用。混合器使用@mixin标识符定义。这个标识符给一大段样式赋予一个名字，这样你就可以轻易地通过引用这个名字重用这段样式。下边的这段sass代码，定义了一个非常简单的混合器，目的是添加跨浏览器的圆角边框。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@mixin rounded-corners &#123;</span><br><span class="line">  -moz-border-radius: 5px;</span><br><span class="line">  -webkit-border-radius: 5px;</span><br><span class="line">  border-radius: 5px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br>然后就可以在你的样式表中通过@include来使用这个混合器，放在你希望的任何地方。@include调用会把混合器中的所有样式提取出来放在@include被调用的地方。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">notice &#123;</span><br><span class="line">  background-color: green;</span><br><span class="line">  border: 2px solid #00aa00;</span><br><span class="line">  @include rounded-corners;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br>混合器并不一定总得生成相同的样式。可以通过在@include混合器时给混合器传参，来定制混合器生成的精确样式。当@include混合器时，参数其实就是可以赋值给css属性值的变量。如果你写过JavaScript，这种方式跟JavaScript的function很像：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@mixin link-colors($normal, $hover, $visited) &#123;</span><br><span class="line">  color: $normal;</span><br><span class="line">  &amp;:hover &#123; color: $hover; &#125;</span><br><span class="line">  &amp;:visited &#123; color: $visited; &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br>当混合器被@include时，你可以把它当作一个css函数来传参。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a &#123;</span><br><span class="line">  @include link-colors(blue, red, green);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<ul>
-<li>使用选择器继承来精简CSS</li>
-</ul>
-<p>使用sass的时候，最后一个减少重复的主要特性就是选择器继承。基于Nicole Sullivan面向对象的css的理念，选择器继承是说一个选择器可以继承为另一个选择器定义的所有样式。这个通过@extend语法实现，如下代码:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">.error &#123;</span><br><span class="line">  border: 1px solid red;</span><br><span class="line">  background-color: #fdd;</span><br><span class="line">&#125;</span><br><span class="line">.seriousError &#123;</span><br><span class="line">  @extend .error;</span><br><span class="line">  border-width: 3px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br>在上边的代码中，.seriousError将会继承样式表中任何位置处为.error定义的所有样式。以class=”seriousError” 修饰的html元素最终的展示效果就好像是class=”seriousError error”。</p>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>sass大法好！以后在vue中尽情使用sass吧！</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">sass</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/01/18/sass/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-hotreload" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/01/02/hotreload/">Linux下vue-cli热加载失效</a>
-    </h1>
-  
-
-        
-        <a href="/2018/01/02/hotreload/" class="archive-article-date">
-  	<time datetime="2018-01-02T05:38:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-02</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="热加载失效"><a href="#热加载失效" class="headerlink" title="热加载失效"></a>热加载失效</h3><p>用vue-cli+webpack+element+axios+vue-router搭建了一个后台管理系统，用得很顺手，元旦过后启动项目发现热加载突然失效了。修改代码后保存，页面不发生改变，手动刷新也不起作用，只能重新启动项目才能看到修改后的效果。</p>
-<h3 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf</span><br><span class="line">sudo sysctl -p</span><br></pre></td></tr></table></figure>
-<p>OK，问题解决了！</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">vue-cli</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/01/02/hotreload/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-搭建博客" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/13/搭建博客/">webpack3+vue2 项目搭建(without vue-cli)</a>
-    </h1>
-  
-
-        
-        <a href="/2017/12/13/搭建博客/" class="archive-article-date">
-  	<time datetime="2017-12-13T09:47:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-13</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>Vue-cli是官方提供的快速构建单页应用的脚手架，按官方文档跑了一遍确实非常强大，但牵扯的东西比较多，所以存在了一些疑惑，比如说整个项目是怎么组织运行起来的，main.js-APP.vue-各个组件之间是怎样相互引用的？为了加深自己的理解，不借助官方构建工具，利用webpack3+vue2自行构建一个类似于官方的项目结构，去体会它的运作机制。</p>
-<h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><p>安装node.js<br>根据自己的操作系统去<a href="http://nodejs.cn/download/" target="_blank" rel="noopener">官网</a>下载安装包,安装完毕之后就可以使用npm了。npm是随同node.js一起安装的包管理工具，允许用户从npm服务器下载别人编写的第三方包到本地使用；允许用户从npm服务器下载并安装别人编写的命令行程序到本地使用；允许用户将自己编写的包或命令行程序上传到NPM服务器供别人使用。<br>npm的包安装分本地安装跟全局安装：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ npm install &lt;Module Name&gt;      # 本地安装</span><br><span class="line">$ npm install &lt;Module Name&gt; -g   # 全局安装</span><br></pre></td></tr></table></figure><br>因为npm是从国外服务器下载包，受网络影响大，可能出现异常，因此淘宝团队做了一个完整 npmjs.org 镜像，你可以用此代替官方版本(只读)，同步频率目前为 10分钟 一次以保证尽量与官方服务同步,所以你可以使用定制的cnpm命令行工具代替默认的npm：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g cnpm --registry=https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure></p>
-<h3 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h3><p>1.新建一个文件夹,进入项目根目录，初始化npm<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir vue-webpack</span><br><span class="line">cd vue-webpack</span><br><span class="line">npm init</span><br></pre></td></tr></table></figure><br>然后会让你输入文件名，版本，描述等信息，一路回车就好，最后根目录下面会产生一个package.json文件，这是一个标准的npm说明文件，里面蕴含了丰富的信息，包括当前项目的依赖模块，自定义的脚本任务等等。<br>2.安装vue包到项目<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save vue</span><br></pre></td></tr></table></figure><br>注意：npm在安装vue包时，有两种命令参数可以把它们的信息写入package.json文件，一个是npm install - -save，另一个是npm install - -save-dev，- -save会把依赖包名称添加到package.json文件的dependencies 键下，而- -save-dev则把依赖包名称添加到devDependencies 键下。npm文档解释dependencies是运行时依赖，devDependencies是开发时的依赖。即devDependencies 下列出的模块，是我们开发时用的，dependencies下的模块，则是我们发布后还需要依赖的模块，譬如像Vue框架，我们在开发完后肯定还要依赖它，否则就运行不了。<br>3.创建目录结构<br>在根目录下创建src文件夹，dist文件夹和index.html，接下来在src文件夹下面创建入口文件main.js，项目根组件App.js和组件目录components，并且components目录下创建两个组件component1.js和components2.js，当前目录结构如下：<br><img src="/assets/blogImg/folder.png" alt=""></p>
-<h3 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h3><p>components文件夹下存放的是项目中的除根组件外的其他组件，我们在写这些组件的时候应该遵循的一个原则就是：与外界隔绝，不做任何与外界耦合的假设。首先编写组件component1.js跟component2.js：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">export default&#123;</span><br><span class="line">   template: &apos;&lt;p&gt;&lt;/p&gt;&apos;,</span><br><span class="line">   props: &#123;</span><br><span class="line">	message:&#123;</span><br><span class="line">	type:String,</span><br><span class="line">	default: &apos;this is compontent1&apos;</span><br><span class="line">	&#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">export default&#123;</span><br><span class="line">   template: &apos;&lt;p&gt;&lt;/p&gt;&apos;,</span><br><span class="line">   props: &#123;</span><br><span class="line">	message:&#123;</span><br><span class="line">	type:String,</span><br><span class="line">	default: &apos;this is compontent2&apos;</span><br><span class="line">	&#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br>接下来我们需要在根组件中引用这两个组件，根组件的写法遵循同样的原则：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">import component1 from &apos;./components/component1.js&apos;</span><br><span class="line">import component2 from &apos;./components/component2.js&apos;</span><br><span class="line">export default&#123;</span><br><span class="line">   template: &quot;&lt;div&gt;&lt;h1&gt;this is vue app&lt;/h1&gt;&lt;component1&gt;&lt;/component1&gt;&lt;component2&gt;&lt;/component2&gt;&lt;/div&gt;&quot;,</span><br><span class="line">   components: &#123;</span><br><span class="line">	&apos;component1&apos;: component1,</span><br><span class="line">	&apos;component2&apos;: component2,</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br>要使用组件，首先要将其import导入，因为组件中导出的写法是export default，所以我们在这可以给组件对象随意命名（import后紧随的’component1’就是我们的命名），这是ES6的语法规则。记住：每个组件对象我们都需要使用export default进行导出，因为这样外界才可以调用它，并且将 给此组件的命名权 递交给使用者。<br>我们看到，在根组件中我们有components选项，用来注册将使用的组件（局部注册），此选项对象中的key将作为模板中标签，value为其他组件对象。</p>
-<h3 id="入口"><a href="#入口" class="headerlink" title="入口"></a>入口</h3><p>组件都写好了，那如何将其挂载到html页面中呢，这个时候我们需要一个桥梁，就是main.js：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">import component1 from &apos;./components/component1.js&apos;</span><br><span class="line">import component2 from &apos;./components/component2.js&apos;</span><br><span class="line">import Vue from &apos;vue&apos;</span><br><span class="line">import app from &apos;./App.js&apos;</span><br><span class="line">new Vue(&#123;</span><br><span class="line">	template: &apos;&lt;app&gt;&lt;/app&gt;&apos;,</span><br><span class="line">	components: &#123;&apos;app&apos;:app&#125;</span><br><span class="line">&#125;).$mount(&apos;#app&apos;)</span><br></pre></td></tr></table></figure><br>首先导入Vue，接着导入App根组件，将其注册为Vue实例的组件，并且在模板中使用它（template:’’），然后将这个Vue实例挂载到index.html中id为app的元素中。</p>
-<h3 id="打包"><a href="#打包" class="headerlink" title="打包"></a>打包</h3><p>在打包之前我们需要先修改vue npm包的package.json文件，将默认导出的‘只包含运行时’改为‘完整版’，即将如下两项的’runtime’去掉（运行时不包含编译器 | 编译器作用：用来将模板字符串编译成为 JavaScript 渲染函数的代码&gt;，因此组件对象不支持 template 选项）：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&quot;main&quot;: &quot;dist/vue.common.js&quot;,</span><br><span class="line">&quot;module&quot;: &quot;dist/vue.esm.js&quot;,</span><br></pre></td></tr></table></figure><br>WebPack可以看做是模块打包机：它做的事情是，分析你的项目结构，找到JavaScript模块以及其它的一些浏览器不能直接运行的拓展语言（Scss，TypeScript等），并将其转换和打包为合适的格式供浏览器使用。<br>Webpack可以使用npm安装，首先全局安装，然后安装到项目目录：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install -g webpack</span><br><span class="line">npm install --save-dev webpack</span><br></pre></td></tr></table></figure><br>安装完成后，webpack可以在终端中使用，在基本的使用方法如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">webpack &#123;entry file&#125; &#123;destination for bundled file&#125;   # &#123;extry file&#125;处填写入口文件的路径  &#123;destination for bundled file&#125;处填写打包文件的存放路径</span><br></pre></td></tr></table></figure><br>在本项目中，入口文件是src目录下的main.js，我们把打包命名为main.bundle.js存放在dist目录下，因此在项目根目录下执行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">webpack ./src/main.js ./dist/main.bundle.js</span><br></pre></td></tr></table></figure><br>执行完成之后我们可以在dist目录下看到打包好的文件，现在我们将打包好的文件引入index页面：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;Vue App&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div id=&quot;app&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;script type=&quot;text/javascript&quot; src=&quot;dist/main.bundle.js&quot;&gt;&lt;/script&gt;&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure><br>现在打开index.html，可以看到如下结果：<br><img src="/assets/blogImg/index.png" alt=""><br>有没有很激动？单你肯定觉得这条指令比较复杂，在终端进行复杂的操作其实不太方便且容易出错，因此可以通过配置文件来使用webpack。</p>
-<h3 id="通过配置文件来使用webpack"><a href="#通过配置文件来使用webpack" class="headerlink" title="通过配置文件来使用webpack"></a>通过配置文件来使用webpack</h3><p>webpack拥有很多其他的比较高级的功能，这些功能其实都可以通过命令行模式实现，但是这样不太方便且容易出错，解决方法就是定义一个配置文件，这个配置文件其实也是一个简单的javascript模块，我们可以把所有与打包相关的信息放在里面。<br>现在我们在根目录下新建webpack.config.js文件，在其中做简单的配置，目前的配置主要涉及到的内容是入口文件路径和打包后文件的存放路径。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">module.exports = &#123;</span><br><span class="line">  entry:  __dirname + &quot;/src/main.js&quot;,//已多次提及的唯一入口文件</span><br><span class="line">  output: &#123;</span><br><span class="line">    path: __dirname + &quot;/dist&quot;,//打包后的文件存放的地方</span><br><span class="line">    filename: &quot;main.bundle.js&quot;//打包后输出文件的文件名</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br>“__dirname”是node.js中的一个全局变量，它指向当前执行脚本所在的目录。有了这个配置之后，再打包文件，只需在终端里运行webpack命令就可以了，这条命令会自动引用webpack.config.js文件中的配置选项。</p>
-<h3 id="更快捷的执行打包任务"><a href="#更快捷的执行打包任务" class="headerlink" title="更快捷的执行打包任务"></a>更快捷的执行打包任务</h3><p>由于npm可以引导任务执行，在对npm进行配置后可以在命令行中使用简单的npm start命令来替代上面的webpack命令。在package.json中对scripts对象进行相关的设置即可，设置方法如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&quot;scripts&quot;: &#123;</span><br><span class="line">    &quot;test&quot;: &quot;echo \&quot;Error: no test specified\&quot; &amp;&amp; exit 1&quot;,</span><br><span class="line">    &quot;start&quot; : &quot;webpack&quot;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure><br>npm的start命令是一个特殊的脚本名称，其特殊性表现在，在命令行中使用npm start就可以执行其对于的命令，如果对应的此脚本名称不是start，想要在命令行中运行时，需要这样用npm run {script name}如npm run build，现在我们在命令行中输入npm start就可以同样完成打包了。</p>
-<h3 id="Webpack的强大功能"><a href="#Webpack的强大功能" class="headerlink" title="Webpack的强大功能"></a>Webpack的强大功能</h3><p>使用webpack构建本地服务器<br>想不想让你的浏览器监听你的代码的修改，并自动刷新显示修改后的结果，其实Webpack提供一个可选的本地开发服务器，这个本地服务器基于node.js构建，可以实现你想要的这些功能，不过它是一个单独的组件，在webpack中进行配置之前需要单独安装它作为项目依赖。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save-dev webpack-dev-server</span><br></pre></td></tr></table></figure><br>devserver作为webpack配置选项中的一项，以下是它的一些配置选项，更多配置可参考<a href="https://webpack.js.org/configuration/dev-server/" target="_blank" rel="noopener">这里</a><br><img src="/assets/blogImg/devserver.png" alt=""><br>把这些命令加到webpack的配置文件中，现在的配置文件webpack.config.js如下所示：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">module.exports = &#123;</span><br><span class="line">  entry:  __dirname + &quot;/src/main.js&quot;,//已多次提及的唯一入口文件</span><br><span class="line">  output: &#123;</span><br><span class="line">    path: __dirname + &quot;/dist&quot;,//打包后的文件存放的地方</span><br><span class="line">    filename: &quot;main.bundle.js&quot;//打包后输出文件的文件名</span><br><span class="line">  &#125;,</span><br><span class="line">  devServer: &#123;</span><br><span class="line">    contentBase: &quot;./&quot;,//本地服务器所加载的页面所在的目录</span><br><span class="line">    historyApiFallback: true,//不跳转</span><br><span class="line">    inline: true//实时刷新</span><br><span class="line">  &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br>在package.json中的scripts对象中添加如下命令，用以开启本地服务器：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&quot;scripts&quot;: &#123;</span><br><span class="line">    &quot;test&quot;: &quot;echo \&quot;Error: no test specified\&quot; &amp;&amp; exit 1&quot;,</span><br><span class="line">    &quot;start&quot; : &quot;webpack&quot;,</span><br><span class="line">    &quot;server&quot;: &quot;webpack-dev-server --open&quot;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure><br>在终端中输入npm run server即可在本地的8080端口查看结果。</p>
-<h3 id="插件（Plugins）"><a href="#插件（Plugins）" class="headerlink" title="插件（Plugins）"></a>插件（Plugins）</h3><p>插件（Plugins）是用来拓展Webpack功能的，它们会在整个构建过程中生效，执行相关的任务。Webpack有很多内置插件，同时也有很多第三方插件，可以让我们完成更加丰富的功能。要使用某个插件，我们需要通过npm安装它，然后要做的就是在webpack配置中的plugins关键字部分添加该插件的一个实例（plugins是一个数组）继续上面的例子，我们添加了一个给打包后代码添加版权声明的插件。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">const webpack = require(&apos;webpack&apos;);</span><br><span class="line">module.exports = &#123;</span><br><span class="line">  entry:  __dirname + &quot;/src/main.js&quot;,//已多次提及的唯一入口文件</span><br><span class="line">  output: &#123;</span><br><span class="line">    path: __dirname + &quot;/dist&quot;,//打包后的文件存放的地方</span><br><span class="line">    filename: &quot;main.bundle.js&quot;//打包后输出文件的文件名</span><br><span class="line">  &#125;,</span><br><span class="line">  devServer: &#123;</span><br><span class="line">    contentBase: &quot;./&quot;,//本地服务器所加载的页面所在的目录</span><br><span class="line">    historyApiFallback: true,//不跳转</span><br><span class="line">    inline: true//实时刷新</span><br><span class="line">  &#125; ,</span><br><span class="line">  plugins: [</span><br><span class="line">        new webpack.BannerPlugin(&apos;版权所有，翻版必究&apos;)</span><br><span class="line">    ],</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br>通过这个插件，打包后的JS文件显示如下：<br><img src="/assets/blogImg/banner.png" alt=""><br>webpack还有很多常用的插件，具体用法请参照<a href="https://doc.webpack-china.org/concepts/plugins/" target="_blank" rel="noopener">官网</a></p>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>至此，对于用webpack+vue搭建一个简单的骨架已经有了一定的理解，对项目运作机制以及各个组件间的引用也有了相应的了解，能够更好的探索其他关于webpack跟vue的知识。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">webpack</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/12/13/搭建博客/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-  
 
 
           </div>
@@ -514,10 +227,10 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
+		isHome: false,
 		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
