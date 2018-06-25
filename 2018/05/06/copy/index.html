@@ -6,18 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://melodyyyyy.com">
-  <title>Archives: 2018/1 | melody</title>
+  <title>js深拷贝和浅拷贝 | melody</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="melody&apos;s blog">
-<meta property="og:type" content="website">
-<meta property="og:title" content="melody">
-<meta property="og:url" content="http://melodyyyyy.com/archives/2018/01/index.html">
+  <meta name="description" content="前言JS的深拷贝(Deep Copy)和浅拷贝(Shallow Copy)，只是针对数组和对象这样复杂数据类型的复制问题。深拷贝和浅拷贝都可以实现在已有对象上再生一份的作用，但是深拷贝会在堆中开辟一块新的内存地址用于存放复制的对象，拷贝后的对象余原来的对象是完全隔离的，互不影响，而浅拷贝仅仅是指向被复制的内存地址，如果原地址中对象被改变了，那么浅拷贝出来的对象也会相应改变。深拷贝和浅拷贝的最根本区">
+<meta name="keywords" content="深拷贝,浅拷贝">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js深拷贝和浅拷贝">
+<meta property="og:url" content="http://melodyyyyy.com/2018/05/06/copy/index.html">
 <meta property="og:site_name" content="melody">
-<meta property="og:description" content="melody&apos;s blog">
+<meta property="og:description" content="前言JS的深拷贝(Deep Copy)和浅拷贝(Shallow Copy)，只是针对数组和对象这样复杂数据类型的复制问题。深拷贝和浅拷贝都可以实现在已有对象上再生一份的作用，但是深拷贝会在堆中开辟一块新的内存地址用于存放复制的对象，拷贝后的对象余原来的对象是完全隔离的，互不影响，而浅拷贝仅仅是指向被复制的内存地址，如果原地址中对象被改变了，那么浅拷贝出来的对象也会相应改变。深拷贝和浅拷贝的最根本区">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-06-25T07:50:27.768Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="melody">
-<meta name="twitter:description" content="melody&apos;s blog">
+<meta name="twitter:title" content="js深拷贝和浅拷贝">
+<meta name="twitter:description" content="前言JS的深拷贝(Deep Copy)和浅拷贝(Shallow Copy)，只是针对数组和对象这样复杂数据类型的复制问题。深拷贝和浅拷贝都可以实现在已有对象上再生一份的作用，但是深拷贝会在堆中开辟一块新的内存地址用于存放复制的对象，拷贝后的对象余原来的对象是完全隔离的，互不影响，而浅拷贝仅仅是指向被复制的内存地址，如果原地址中对象被改变了，那么浅拷贝出来的对象也会相应改变。深拷贝和浅拷贝的最根本区">
   
     <link rel="alternative" href="/atom.xml" title="melody" type="application/atom+xml">
   
@@ -149,98 +151,175 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-copy" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/01/18/sass/" class="archive-article-date">
-  	<time datetime="2018-01-18T01:18:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-18</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/01/18/sass/">在vue项目中使用sass</a>
+    <h1 class="article-title" itemprop="name">
+      js深拷贝和浅拷贝
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2018/05/06/copy/" class="archive-article-date">
+  	<time datetime="2018-05-06T06:37:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-06</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>JS的深拷贝(Deep Copy)和浅拷贝(Shallow Copy)，只是针对数组和对象这样复杂数据类型的复制问题。深拷贝和浅拷贝都可以实现在已有对象上再生一份的作用，但是深拷贝会在堆中开辟一块新的内存地址用于存放复制的对象，拷贝后的对象余原来的对象是完全隔离的，互不影响，而浅拷贝仅仅是指向被复制的内存地址，如果原地址中对象被改变了，那么浅拷贝出来的对象也会相应改变。深拷贝和浅拷贝的最根本区别在于是否真正获取了一个对象的复制实例而不是引用。</p>
+<h3 id="数组的深浅拷贝"><a href="#数组的深浅拷贝" class="headerlink" title="数组的深浅拷贝"></a>数组的深浅拷贝</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var arr = [&quot;One&quot;,&quot;Two&quot;,&quot;Three&quot;];</span><br><span class="line">var arrto = arr;</span><br><span class="line">arrto[1] = &quot;test&quot;;</span><br><span class="line">console.log(&quot;数组的原始值：&quot; + arr);    //数组的原始值：One,test,Three</span><br><span class="line">console.log(&quot;数组的新值：&quot; + arrto);    //数组的新值：One,test,Three</span><br></pre></td></tr></table></figure>
+<p>这种直接赋值的方式就是浅拷贝，很多时候我们需要arr的值不变，这时候就需要用到深拷贝。<br>1.js的slice函数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var arr = [&quot;One&quot;,&quot;Two&quot;,&quot;Three&quot;];</span><br><span class="line">var arrto = arr.slice(0);</span><br><span class="line">arrto[1] = &quot;set Map&quot;;</span><br><span class="line">console.log(&quot;数组的原始值：&quot; + arr);    //数组的原始值：One,Two,Three</span><br><span class="line">console.log(&quot;数组的新值：&quot; + arrto);    //数组的新值：One,set Map,Three</span><br></pre></td></tr></table></figure><br>2.js的concat方法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var arr = [&quot;One&quot;,&quot;Two&quot;,&quot;Three&quot;];</span><br><span class="line">var arrto = arr.concat();;</span><br><span class="line">arrto[1] = &quot;set Map To&quot;;</span><br><span class="line">console.log(&quot;数组的原始值：&quot; + arr);    //数组的原始值：One,Two,Three</span><br><span class="line">console.log(&quot;数组的新值：&quot; + arrto);    //数组的新值：One,set Map To,Three</span><br></pre></td></tr></table></figure></p>
+<h3 id="对象的深浅拷贝"><a href="#对象的深浅拷贝" class="headerlink" title="对象的深浅拷贝"></a>对象的深浅拷贝</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">var json1 = &#123;&quot;a&quot;:&quot;李鹏&quot;,&quot;arr1&quot;:[1,2,3]&#125;</span><br><span class="line">function copy(obj1) &#123;</span><br><span class="line">　　　　var obj2 = &#123;&#125;;</span><br><span class="line">　　　　for (var i in obj1) &#123;</span><br><span class="line">　　　　　　obj2[i] = obj1[i];</span><br><span class="line">　　　　&#125;</span><br><span class="line">　　　　return obj2;</span><br><span class="line">&#125;</span><br><span class="line">var json2 = copy(json1);</span><br><span class="line">json1.arr1.push(4);</span><br><span class="line">alert(json1.arr1);  //1234</span><br><span class="line">alert(json2.arr1)  //1234</span><br></pre></td></tr></table></figure>
+<p>深拷贝的话我们可以通过递归的思想来做<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">var json1=&#123;&quot;name&quot;:&quot;鹏哥&quot;,&quot;age&quot;:18,&quot;arr1&quot;:[1,2,3,4,5],&quot;string&quot;:&apos;afasfsafa&apos;,&quot;arr2&quot;:[1,2,3,4,5],&quot;arr3&quot;:[&#123;&quot;name1&quot;:&quot;李鹏&quot;&#125;,&#123;&quot;job&quot;:&quot;前端开发&quot;&#125;]&#125;;</span><br><span class="line">var json2=&#123;&#125;;</span><br><span class="line">function copy(obj1,obj2)&#123;</span><br><span class="line">  var obj2=obj2||&#123;&#125;; //最初的时候给它一个初始值=它自己或者是一个json</span><br><span class="line">  for(var name in obj1)&#123;</span><br><span class="line">    if(typeof obj1[name] === &quot;object&quot;)&#123; //先判断一下obj[name]是不是一个对象</span><br><span class="line">      obj2[name]= (obj1[name].constructor===Array)?[]:&#123;&#125;; //我们让要复制的对象的name项=数组或者是json</span><br><span class="line">      copy(obj1[name],obj2[name]); //然后来无限调用函数自己 递归思想</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">      obj2[name]=obj1[name];  //如果不是对象，直接等于即可，不会发生引用。</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  return obj2; //然后在把复制好的对象给return出去</span><br><span class="line">&#125;</span><br><span class="line">json2=copy(json1,json2)</span><br><span class="line">json1.arr1.push(6);</span><br><span class="line">alert(json1.arr1);  //123456</span><br><span class="line">alert(json2.arr1);  //12345</span><br></pre></td></tr></table></figure><br>以上</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">sass</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">深拷贝</a>
         		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/01/02/hotreload/" class="archive-article-date">
-  	<time datetime="2018-01-02T05:38:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-02</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/01/02/hotreload/">Linux下vue-cli热加载失效</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
+      		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">vue-cli</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">浅拷贝</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://melodyyyyy.com/2018/05/06/copy/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2018/03/17/sessionStorage/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">webStorage</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -262,8 +341,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
