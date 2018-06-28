@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://melodyyyyy.com/"/>
-  <updated>2018-06-25T07:50:27.768Z</updated>
+  <updated>2018-06-28T08:09:13.926Z</updated>
   <id>http://melodyyyyy.com/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Javascript跨域</title>
+    <link href="http://melodyyyyy.com/2018/05/21/%E8%B7%A8%E5%9F%9F/"/>
+    <id>http://melodyyyyy.com/2018/05/21/跨域/</id>
+    <published>2018-05-21T07:56:18.000Z</published>
+    <updated>2018-06-28T08:09:13.926Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>跨域指的是从一个域名的网页去请求另一个域名的资源，只要协议、域名、端口有任何一个不同就被当作不同的域，之间的请求就是跨域操作。但是一般情况下由于浏览器对javascript的安全限制，跨域访问是受限制的。</p><h3 id="同源策略"><a href="#同源策略" class="headerlink" title="同源策略"></a>同源策略</h3><p>所谓同源策略是指域名、协议、端口均相同。</p><table><thead><tr><th style="text-align:left">URL</th><th style="text-align:left">说明</th><th style="text-align:left">是否允许通信</th></tr></thead><tbody><tr><td style="text-align:left"><a href="http://www.baidu.com/a.js" target="_blank" rel="noopener">http://www.baidu.com/a.js</a><br><a href="http://www.baidu.com/b.js" target="_blank" rel="noopener">http://www.baidu.com/b.js</a></td><td style="text-align:left">域名、协议、端口均相同</td><td style="text-align:left">允许</td></tr><tr><td style="text-align:left"><a href="http://www.baidu.com:8080/a.js" target="_blank" rel="noopener">http://www.baidu.com:8080/a.js</a><br><a href="http://www.baidu.com/b.js" target="_blank" rel="noopener">http://www.baidu.com/b.js</a></td><td style="text-align:left">同一域名、不同端口</td><td style="text-align:left">不允许</td></tr><tr><td style="text-align:left"><a href="http://www.baidu.com/a.js" target="_blank" rel="noopener">http://www.baidu.com/a.js</a><br><a href="https://www.baidu.com/b.js" target="_blank" rel="noopener">https://www.baidu.com/b.js</a></td><td style="text-align:left">同一域名、不同协议</td><td style="text-align:left">不允许</td></tr><tr><td style="text-align:left"><a href="http://www.baidu.com/a.js" target="_blank" rel="noopener">http://www.baidu.com/a.js</a><br><a href="https://192.168.1.23/b.js" target="_blank" rel="noopener">https://192.168.1.23/b.js</a></td><td style="text-align:left">域名和域名对应IP</td><td style="text-align:left">不允许</td></tr><tr><td style="text-align:left"><a href="http://www.baidu.com/a.js" target="_blank" rel="noopener">http://www.baidu.com/a.js</a><br><a href="https://www.google.com/b.js" target="_blank" rel="noopener">https://www.google.com/b.js</a></td><td style="text-align:left">不同域名</td><td style="text-align:left">不允许</td></tr></tbody></table><p>需要注意的是：<br>1.如果是协议和端口造成的跨域问题”前台”是无能为力的。<br>2.域仅仅是通过URL首部来识别，不会尝试判断相同的IP地址对应着两个域或者两个域是否在同一个IP上。</p><h3 id="为什么要有跨域限制"><a href="#为什么要有跨域限制" class="headerlink" title="为什么要有跨域限制"></a>为什么要有跨域限制</h3>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h3&gt;&lt;p&gt;跨域指的是从一个域名的网页去请求另一个域名的资源，只要协议、域名、端口有任何一个不同就被当作不同的域，之间的请求就是跨域操作。但是一般情况下
+      
+    
+    </summary>
+    
+    
+      <category term="跨域" scheme="http://melodyyyyy.com/tags/%E8%B7%A8%E5%9F%9F/"/>
+    
+  </entry>
   
   <entry>
     <title>js深拷贝和浅拷贝</title>

@@ -151,6 +151,118 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-跨域" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/21/跨域/">Javascript跨域</a>
+    </h1>
+  
+
+        
+        <a href="/2018/05/21/跨域/" class="archive-article-date">
+  	<time datetime="2018-05-21T07:56:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-21</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>跨域指的是从一个域名的网页去请求另一个域名的资源，只要协议、域名、端口有任何一个不同就被当作不同的域，之间的请求就是跨域操作。但是一般情况下由于浏览器对javascript的安全限制，跨域访问是受限制的。</p>
+<h3 id="同源策略"><a href="#同源策略" class="headerlink" title="同源策略"></a>同源策略</h3><p>所谓同源策略是指域名、协议、端口均相同。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">URL</th>
+<th style="text-align:left">说明</th>
+<th style="text-align:left">是否允许通信</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><a href="http://www.baidu.com/a.js" target="_blank" rel="noopener">http://www.baidu.com/a.js</a><br><a href="http://www.baidu.com/b.js" target="_blank" rel="noopener">http://www.baidu.com/b.js</a></td>
+<td style="text-align:left">域名、协议、端口均相同</td>
+<td style="text-align:left">允许</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="http://www.baidu.com:8080/a.js" target="_blank" rel="noopener">http://www.baidu.com:8080/a.js</a><br><a href="http://www.baidu.com/b.js" target="_blank" rel="noopener">http://www.baidu.com/b.js</a></td>
+<td style="text-align:left">同一域名、不同端口</td>
+<td style="text-align:left">不允许</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="http://www.baidu.com/a.js" target="_blank" rel="noopener">http://www.baidu.com/a.js</a><br><a href="https://www.baidu.com/b.js" target="_blank" rel="noopener">https://www.baidu.com/b.js</a></td>
+<td style="text-align:left">同一域名、不同协议</td>
+<td style="text-align:left">不允许</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="http://www.baidu.com/a.js" target="_blank" rel="noopener">http://www.baidu.com/a.js</a><br><a href="https://192.168.1.23/b.js" target="_blank" rel="noopener">https://192.168.1.23/b.js</a></td>
+<td style="text-align:left">域名和域名对应IP</td>
+<td style="text-align:left">不允许</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="http://www.baidu.com/a.js" target="_blank" rel="noopener">http://www.baidu.com/a.js</a><br><a href="https://www.google.com/b.js" target="_blank" rel="noopener">https://www.google.com/b.js</a></td>
+<td style="text-align:left">不同域名</td>
+<td style="text-align:left">不允许</td>
+</tr>
+</tbody>
+</table>
+<p>需要注意的是：<br>1.如果是协议和端口造成的跨域问题”前台”是无能为力的。<br>2.域仅仅是通过URL首部来识别，不会尝试判断相同的IP地址对应着两个域或者两个域是否在同一个IP上。</p>
+<h3 id="为什么要有跨域限制"><a href="#为什么要有跨域限制" class="headerlink" title="为什么要有跨域限制"></a>为什么要有跨域限制</h3>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">跨域</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/05/21/跨域/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-copy" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -692,6 +804,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">vue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">跨域</a>
               </li>
             
             <div class="clearfix"></div>
